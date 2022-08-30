@@ -4,13 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'blue': '#382AE1',
-        'light': '#E0E8FF',
-        'light-500': '#E0E8FF55',
-        'dark': '#202C54',
-      },
-      boxShadow: {
-        'shadow-button': '0 2px 15px #382AE150',
+        'light': '#F3F8FB',
+        'green': {
+          100: '#BEDCDF',
+          200: '#26C2AD',
+          300: '#00474B',
+        },
       },
     },
   },
