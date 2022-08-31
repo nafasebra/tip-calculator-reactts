@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { FormEvent, MouseEventHandler, useRef } from "react";
 
 type propType = {
   label: string;
@@ -9,6 +9,11 @@ type propType = {
 
 function Input(props: propType) {
   const { label, value, onChangeFunc, icon } = props;
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const selectTextOnClick = () => {
+    inputRef.current?.select();
+  }
 
   return (
     <>
@@ -22,6 +27,8 @@ function Input(props: propType) {
         <input
           type="text"
           value={value}
+          ref={inputRef}
+          onClick={() => selectTextOnClick()}
           onChange={(e) => onChangeFunc(e)}
           id={`txt${label}`}
           className="w-full py-3 outline-1 outline-greenc-200 pl-10 pr-5 font-semibold text-right rounded-lg bg-gray-100"
