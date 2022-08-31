@@ -104,7 +104,7 @@ function TipRadioButtons() {
             type="text"
             onChange={(e) => onChangeCustomTip(e)}
             placeholder="custom"
-            className="w-full h-full py-3 outline-1 outline-greenc-200 px-5 font-semibold text-xl text-center rounded-lg bg-gray-100"
+            className="w-full h-full py-3 outline-1 outline-greenc-200 px-2 font-semibold text-xl text-center rounded-lg bg-gray-100"
           />
         </div>
       </div>
