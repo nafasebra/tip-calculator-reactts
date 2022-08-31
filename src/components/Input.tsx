@@ -24,7 +24,7 @@ function Input(props: propType) {
           value={value}
           onChange={(e) => onChangeFunc(e)}
           id={`txt${label}`}
-          className="w-full py-3 outline-1 outline-green-200 pl-10 pr-5 font-semibold text-right rounded-lg bg-gray-100"
+          className="w-full py-3 outline-1 outline-greenc-200 pl-10 pr-5 font-semibold text-right rounded-lg bg-gray-100"
         />
         {icon !== undefined && (
           <img
