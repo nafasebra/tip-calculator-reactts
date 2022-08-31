@@ -14,20 +14,23 @@ function CardContainer() {
   const TipUseContext = useContext(TipContext);
 
   const ResetData = () => {
+    setTipAmount(0);
+    setTotal(0);
     TipUseContext.setPrice(0);
     TipUseContext.setTip(5);
     TipUseContext.setNumOfPeople(1);
   };
 
   useEffect(() => {
-    const {price, numOfPeople, tip} = TipUseContext;
+    const { price, numOfPeople, tip } = TipUseContext;
 
-    if(price > 0 && numOfPeople >= 1) {
+    if (price > 0 && numOfPeople >= 1) {
       setTipAmount((price * tip / 100) / numOfPeople);
       setTotal((price / numOfPeople) + tipAmount);
-      console.log('tipamount: ' + tipAmount + ' total: ' + total);
+      console.log(` ${price} / ${numOfPeople} + ${tipAmount} `)
+      console.log("tipamount: " + tipAmount + " total: " + total);
     }
-  }, [TipUseContext.price, TipUseContext.numOfPeople, TipUseContext.tip])
+  }, [TipUseContext.price, TipUseContext.numOfPeople, TipUseContext.tip]);
 
   return (
     <div className="bg-white w-[90%] lg:w-[800px] flex flex-col-reverse lg:flex-row justify-between items-stretch rounded-xl mx-auto p-7">

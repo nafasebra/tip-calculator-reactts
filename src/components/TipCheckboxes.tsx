@@ -10,86 +10,85 @@ function TipCheckboxes() {
       <div className="gap-3 grid grid-cols-3 grid-rows-2">
         <div>
           <input
-            type="radio"
-            id="5"
-            name="tax"
-            value="5"
             onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
+            type="radio"
+            id="tip5"
+            name="tip"
+            value="5"
             className="hidden peer"
-            required
-            checked
+            checked={TipUseContext.tip === 5}
           />
           <label
-            htmlFor="5"
-            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl"
+            htmlFor="tip5"
+            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl select-none"
           >
             5%
           </label>
         </div>
         <div>
           <input
-            type="radio"
-            id="10"
-            name="tax"
-            value="10"
             onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
+            type="radio"
+            id="tip10"
+            name="tip"
+            value="10"
             className="hidden peer"
-            required
+            checked={TipUseContext.tip === 10}
           />
           <label
-            htmlFor="10"
-            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl"
+            htmlFor="tip10"
+            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl select-none"
           >
             10%
           </label>
         </div>
         <div>
           <input
-            type="radio"
-            id="15"
-            name="tax"
-            value="15"
             onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
+            type="radio"
+            id="tip15"
+            name="tip"
+            value="15"
             className="hidden peer"
-            required
+            checked={TipUseContext.tip === 15}
           />
           <label
-            htmlFor="15"
-            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl"
+            htmlFor="tip15"
+            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl select-none"
           >
             15%
           </label>
         </div>
         <div>
           <input
-            type="radio"
-            id="25"
-            name="tax"
-            value="25"
             onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
+            type="radio"
+            id="tip25"
+            name="tip"
+            value="25"
             className="hidden peer"
-            required
+            checked={TipUseContext.tip === 25}
           />
           <label
-            htmlFor="25"
-            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl"
+            htmlFor="tip25"
+            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl select-none"
           >
             25%
           </label>
         </div>
         <div>
           <input
-            type="radio"
-            id="50"
-            name="tax"
-            value="50"
             onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
+            type="radio"
+            id="tip50"
+            name="tip"
+            value="50"
             className="hidden peer"
-            required
+            checked={TipUseContext.tip === 50}
           />
           <label
-            htmlFor="50"
-            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl"
+            htmlFor="tip50"
+            className="flex justify-center items-center p-3 text-white bg-greenc-300 rounded-lg border cursor-pointer peer-checked:bg-greenc-200 font-bold hover:text-gray-600 hover:bg-greenc-100 text-xl select-none"
           >
             50%
           </label>

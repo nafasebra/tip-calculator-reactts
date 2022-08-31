@@ -24,8 +24,8 @@ export const TipContext = createContext<contextType>({
 
 export const TipProvider = ({ children }: propType) => {
   const [price, setPrice] = useState<number>(0);
-  const [tip, setTip] = useState<number>(0);
-  const [numOfPeople, setNumOfPeople] = useState<number>(0);
+  const [tip, setTip] = useState<number>(5);
+  const [numOfPeople, setNumOfPeople] = useState<number>(1);
 
   return (
     <TipContext.Provider
