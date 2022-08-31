@@ -28,8 +28,8 @@ function CardContainer() {
 
     if (price > 0 && numOfPeople >= 1) {
       setDisableButton(false);
-      let amount = (price * tip / 100) / numOfPeople; 
-      let total = (price / numOfPeople) + amount;
+      let amount = (price * tip) / 100 / numOfPeople;
+      let total = price / numOfPeople + amount;
       setTipAmount(parseFloat(amount.toFixed(2)));
       setTotal(parseFloat(total.toFixed(2)));
     }
@@ -68,7 +68,7 @@ function CardContainer() {
               <p className="opacity-60 text-xs">/ person</p>
             </div>
             <h2 className="font-bold text-greenc-200 text-4xl">
-              {`$${tipAmount}`}
+              {`$${tipAmount === 0 ? tipAmount + ".00" : tipAmount}`}
             </h2>
           </div>
           <div className="flex items-center justify-between">
@@ -77,14 +77,16 @@ function CardContainer() {
               <p className="opacity-60 text-xs">/ person</p>
             </div>
             <h2 className="font-bold text-greenc-200 text-4xl">
-              {`$${total}`}
+              {`$${total === 0 ? total + ".00" : total}`}
             </h2>
           </div>
         </div>
         <button
           onClick={ResetData}
           disabled={disableButton}
-          className={`uppercase block py-3 bg-greenc-200 text-black rounded-lg hover:bg-greenc-100 ${disableButton ? 'opacity-50' : 'opacity-100'}`}
+          className={`uppercase block py-3 bg-greenc-200 text-black rounded-lg hover:bg-greenc-100 ${
+            disableButton ? "opacity-50" : "opacity-100"
+          }`}
         >
           RESET
         </button>
