@@ -13,7 +13,7 @@ function TipRadioButtons() {
   return (
     <>
       <p className="pb-1 text-gray-600 text-sm">Select top %</p>
-      <div className="gap-3 grid grid-cols-3 grid-rows-2">
+      <div className="gap-3 grid grid-cols-2 grid-rows-3 sm:grid-cols-3 sm:grid-rows-2">
         <div>
           <input
             onChange={(e) => TipUseContext.setTip(Number(e.target.value))}

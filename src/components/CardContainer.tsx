@@ -33,8 +33,8 @@ function CardContainer() {
   }, [TipUseContext.price, TipUseContext.numOfPeople, TipUseContext.tip]);
 
   return (
-    <div className="bg-white w-[90%] lg:w-[800px] flex flex-col-reverse lg:flex-row justify-between items-stretch rounded-xl mx-auto p-7">
-      <div className="w-full lg:w-[48%]">
+    <div className="bg-white w-[90%] md:w-[750px] flex flex-col-reverse md:flex-row justify-between items-stretch rounded-xl mx-auto p-7">
+      <div className="w-full md:w-[48%]">
         <div className="pb-2">
           <Input
             label="bill"
@@ -57,8 +57,8 @@ function CardContainer() {
           />
         </div>
       </div>
-      <div className="flex flex-col justify-between w-full lg:w-[48%] bg-greenc-300 rounded-lg p-6">
-        <div>
+      <div className="flex flex-col justify-between w-full md:w-[48%] bg-greenc-300 rounded-lg p-6">
+        <div className="pt-3 pb-8">
           <div className="flex items-center justify-between pb-8">
             <div className="text-light">
               <h4 className="pb-2 text-sm">Tip Amount</h4>
