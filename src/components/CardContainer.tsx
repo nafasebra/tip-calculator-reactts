@@ -28,10 +28,10 @@ function CardContainer() {
 
     if (price > 0 && numOfPeople >= 1) {
       setDisableButton(false);
-      setTipAmount((price * tip / 100) / numOfPeople);
-      setTotal((price / numOfPeople) + tipAmount);
-      console.log(` ${price} / ${numOfPeople} + ${tipAmount} `)
-      console.log("tipamount: " + tipAmount + " total: " + total);
+      let amount = (price * tip / 100) / numOfPeople; 
+      let total = (price / numOfPeople) + amount;
+      setTipAmount(parseFloat(amount.toFixed(2)));
+      setTotal(parseFloat(total.toFixed(2)));
     }
   }, [TipUseContext.price, TipUseContext.numOfPeople, TipUseContext.tip]);
 
