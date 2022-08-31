@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 type propType = {
-  children: JSX.Element[];
+  children: JSX.Element | JSX.Element[];
 };
 
 type contextType = {
@@ -13,7 +13,7 @@ type contextType = {
   setNumOfPeople: (a: number) => void;
 };
 
-export const tipContext = createContext<contextType>({
+export const TipContext = createContext<contextType>({
   price: 0,
   tip: 5,
   numOfPeople: 1,
@@ -22,16 +22,16 @@ export const tipContext = createContext<contextType>({
   setNumOfPeople: () => {},
 });
 
-export const tipProvider = ({ children }: propType) => {
+export const TipProvider = ({ children }: propType) => {
   const [price, setPrice] = useState<number>(0);
   const [tip, setTip] = useState<number>(0);
   const [numOfPeople, setNumOfPeople] = useState<number>(0);
 
   return (
-    <tipContext.Provider
+    <TipContext.Provider
       value={{ price, setPrice, tip, setTip, numOfPeople, setNumOfPeople }}
     >
       {children}
-    </tipContext.Provider>
+    </TipContext.Provider>
   );
 };

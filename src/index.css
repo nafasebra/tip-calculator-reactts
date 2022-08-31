@@ -7,7 +7,7 @@
 
 @layer components {
   body {
-    @apply bg-green-100;
+    @apply bg-greenc-100;
   }
 }
 
