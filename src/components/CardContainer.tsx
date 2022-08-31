@@ -10,6 +10,7 @@ import TipRadioButtons from "./TipRadioButtons";
 function CardContainer() {
   const [tipAmount, setTipAmount] = useState<number>(0.0);
   const [total, setTotal] = useState<number>(0.0);
+  const [disableButton, setDisableButton] = useState<boolean>(true);
 
   const TipUseContext = useContext(TipContext);
 
@@ -19,12 +20,14 @@ function CardContainer() {
     TipUseContext.setPrice(0);
     TipUseContext.setTip(5);
     TipUseContext.setNumOfPeople(1);
+    setDisableButton(true);
   };
 
   useEffect(() => {
     const { price, numOfPeople, tip } = TipUseContext;
 
     if (price > 0 && numOfPeople >= 1) {
+      setDisableButton(false);
       setTipAmount((price * tip / 100) / numOfPeople);
       setTotal((price / numOfPeople) + tipAmount);
       console.log(` ${price} / ${numOfPeople} + ${tipAmount} `)
@@ -80,7 +83,8 @@ function CardContainer() {
         </div>
         <button
           onClick={ResetData}
-          className="uppercase block py-3 bg-greenc-200 text-black rounded-lg hover:bg-greenc-100"
+          disabled={disableButton}
+          className={`uppercase block py-3 bg-greenc-200 text-black rounded-lg hover:bg-greenc-100 ${disableButton ? 'opacity-50' : 'opacity-100'}`}
         >
           RESET
         </button>

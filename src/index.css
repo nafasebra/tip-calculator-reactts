@@ -6,6 +6,9 @@
 @tailwind utilities;
 
 @layer components {
+  button:disabled {
+    pointer-events: none;
+  }
   body {
     @apply bg-greenc-100;
   }
