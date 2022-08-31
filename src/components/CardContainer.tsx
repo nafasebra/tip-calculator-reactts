@@ -5,7 +5,7 @@ import { TipContext } from "../context";
 
 import userIcon from "../assets/user.svg";
 import dollarIcon from "../assets/dollar.svg";
-import TipCheckboxes from "./TipCheckboxes";
+import TipRadioButtons from "./TipRadioButtons";
 
 function CardContainer() {
   const [tipAmount, setTipAmount] = useState<number>(0.0);
@@ -44,7 +44,7 @@ function CardContainer() {
           />
         </div>
         <div className="py-5">
-          <TipCheckboxes />
+          <TipRadioButtons />
         </div>
         <div className="pt-3">
           <Input

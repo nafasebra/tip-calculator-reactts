@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useContext } from "react";
 import { TipContext } from "../context";
 
-function TipCheckboxes() {
+function TipRadioButtons() {
   const TipUseContext = useContext(TipContext);
 
   const onChangeCustomTip = (e: ChangeEvent<HTMLInputElement>) => {
@@ -112,4 +112,4 @@ function TipCheckboxes() {
   );
 }
 
-export default TipCheckboxes;
+export default TipRadioButtons;
