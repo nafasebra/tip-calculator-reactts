@@ -1,6 +1,9 @@
-import React from "react";
+import {useContext} from "react";
+import { TipContext } from "../context";
 
 function TipCheckboxes() {
+   const TipUseContext = useContext(TipContext);
+
   return (
     <>
       <p className="pb-1 text-gray-600 text-sm">Select top %</p>
@@ -11,8 +14,10 @@ function TipCheckboxes() {
             id="5"
             name="tax"
             value="5"
+            onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
             className="hidden peer"
             required
+            checked
           />
           <label
             htmlFor="5"
@@ -27,6 +32,7 @@ function TipCheckboxes() {
             id="10"
             name="tax"
             value="10"
+            onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
             className="hidden peer"
             required
           />
@@ -43,6 +49,7 @@ function TipCheckboxes() {
             id="15"
             name="tax"
             value="15"
+            onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
             className="hidden peer"
             required
           />
@@ -59,6 +66,7 @@ function TipCheckboxes() {
             id="25"
             name="tax"
             value="25"
+            onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
             className="hidden peer"
             required
           />
@@ -75,6 +83,7 @@ function TipCheckboxes() {
             id="50"
             name="tax"
             value="50"
+            onChange={(e) => TipUseContext.setTip(Number(e.target.value))}
             className="hidden peer"
             required
           />
