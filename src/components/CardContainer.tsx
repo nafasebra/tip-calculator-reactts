@@ -13,6 +13,13 @@ function CardContainer() {
 
   const TipUseContext = useContext(TipContext);
 
+  const ResetData = () => {
+    TipUseContext.setPrice(0);
+    TipUseContext.setTip(5);
+    TipUseContext.setNumOfPeople(1);
+  }
+
+
   return (
     <div className="bg-white w-[90%] lg:w-[800px] flex flex-col-reverse lg:flex-row justify-between items-stretch rounded-xl mx-auto p-7">
       <div className="w-full lg:w-[48%]">
@@ -47,7 +54,7 @@ function CardContainer() {
             </h2>
           </div>
         </div>
-        <button className="uppercase block py-3 bg-greenc-200 text-black rounded-lg hover:bg-greenc-100">
+        <button onClick={ResetData} className="uppercase block py-3 bg-greenc-200 text-black rounded-lg hover:bg-greenc-100">
           RESET
         </button>
       </div>
