@@ -2,7 +2,7 @@
 ### Tip calculator Created with Reactjs, TypeScript and tailwind
 
 
-#### [Watch demo](https://nafasebra.github.io/bookmark-landingpage-reactts)
+#### [Watch demo](https://nafasebra.github.io/tip-calculator-reactts)
 
 ## Tools:
 - Reactjs
