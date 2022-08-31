@@ -48,8 +48,8 @@ function CardContainer() {
         </div>
         <div className="pt-3">
           <Input
-            label="bill"
-            icon={dollarIcon}
+            label="Number of people"
+            icon={userIcon}
             value={String(TipUseContext.numOfPeople)}
             onChangeFunc={(e: any) =>
               TipUseContext.setNumOfPeople(e.target.value)

@@ -1,8 +1,14 @@
-import {useContext} from "react";
+import { ChangeEvent, FormEvent, useContext } from "react";
 import { TipContext } from "../context";
 
 function TipCheckboxes() {
-   const TipUseContext = useContext(TipContext);
+  const TipUseContext = useContext(TipContext);
+
+  const onChangeCustomTip = (e: ChangeEvent<HTMLInputElement>) => {
+    let value = Number(e.currentTarget.value);
+    if (value > 0) TipUseContext.setTip(Number(value));
+    else TipUseContext.setTip(5); // default value
+  };
 
   return (
     <>
@@ -96,7 +102,9 @@ function TipCheckboxes() {
         <div>
           <input
             type="text"
-            className="w-full py-3 outline-1 outline-green-200 px-5 font-semibold text-center rounded-lg bg-gray-100"
+            onChange={(e) => onChangeCustomTip(e)}
+            placeholder="custom"
+            className="w-full h-full py-3 outline-1 outline-greenc-200 px-5 font-semibold text-xl text-center rounded-lg bg-gray-100"
           />
         </div>
       </div>
