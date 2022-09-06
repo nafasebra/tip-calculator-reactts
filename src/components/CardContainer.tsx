@@ -14,6 +14,8 @@ function CardContainer() {
 
   const TipUseContext = useContext(TipContext);
 
+  const numRegex = /^[0-9]*$/;
+
   const ResetData = () => {
     setTipAmount(0);
     setTotal(0);
@@ -43,7 +45,10 @@ function CardContainer() {
             label="bill"
             icon={dollarIcon}
             value={String(TipUseContext.price)}
-            onChangeFunc={(e: any) => TipUseContext.setPrice(e.target.value)}
+            onChangeFunc={(e: any) => {
+              let value = e.target.value;
+              if(value.match(numRegex)) TipUseContext.setPrice(value)
+            }}
           />
         </div>
         <div className="py-5">
@@ -54,9 +59,10 @@ function CardContainer() {
             label="Number of people"
             icon={userIcon}
             value={String(TipUseContext.numOfPeople)}
-            onChangeFunc={(e: any) =>
-              TipUseContext.setNumOfPeople(e.target.value)
-            }
+            onChangeFunc={(e: any) => {
+              let value = e.target.value;
+              if(value.match(numRegex)) TipUseContext.setNumOfPeople(value)
+            }}
           />
         </div>
       </div>

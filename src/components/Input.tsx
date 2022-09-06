@@ -1,4 +1,4 @@
-import { FormEvent, MouseEventHandler, useRef } from "react";
+import { FormEvent, useRef } from "react";
 
 type propType = {
   label: string;

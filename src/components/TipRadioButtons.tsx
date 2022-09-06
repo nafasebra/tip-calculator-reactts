@@ -1,13 +1,17 @@
-import { ChangeEvent, FormEvent, useContext } from "react";
+import { ChangeEvent, useRef, useContext } from "react";
 import { TipContext } from "../context";
 
 function TipRadioButtons() {
   const TipUseContext = useContext(TipContext);
+  const txtCustomTip = useRef(null);
+  const numRegex = /^[0-9]*$/;
 
   const onChangeCustomTip = (e: ChangeEvent<HTMLInputElement>) => {
-    let value = Number(e.currentTarget.value);
-    if (value > 0) TipUseContext.setTip(Number(value));
-    else TipUseContext.setTip(5); // default value
+    let value = e.currentTarget.value;
+    if(value.match(numRegex)) {
+      if (Number(value) > 0) TipUseContext.setTip(Number(value));
+      else TipUseContext.setTip(5); // default value
+    }
   };
 
   return (
@@ -101,10 +105,11 @@ function TipRadioButtons() {
         </div>
         <div>
           <input
-            type="text"
+            type="number"
+            pattern="[0-9]*" inputMode="numeric"
             onChange={(e) => onChangeCustomTip(e)}
-            placeholder="custom"
-            className="w-full h-full py-3 outline-1 outline-greenc-200 px-2 font-semibold text-xl text-center rounded-lg bg-gray-100"
+            placeholder="Custom"
+            className="appearance-none w-full h-full py-3 outline-1 outline-greenc-200 px-2 font-semibold text-xl text-center rounded-lg bg-gray-100"
           />
         </div>
       </div>
