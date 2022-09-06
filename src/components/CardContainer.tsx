@@ -38,11 +38,11 @@ function CardContainer() {
   }, [TipUseContext.price, TipUseContext.numOfPeople, TipUseContext.tip]);
 
   return (
-    <div className="bg-white w-[90%] md:w-[750px] flex flex-col-reverse md:flex-row justify-between items-stretch rounded-xl mx-auto p-7">
-      <div className="w-full md:w-[48%]">
+    <div className="bg-white w-[90%] md:w-[750px] flex flex-col md:flex-row justify-between items-stretch rounded-xl mx-auto p-7">
+      <div className="w-full md:w-[48%] pb-7 md:pb-0">
         <div className="pb-2">
           <Input
-            label="bill"
+            label="Bill"
             icon={dollarIcon}
             value={String(TipUseContext.price)}
             onChangeFunc={(e: any) => {
@@ -73,7 +73,7 @@ function CardContainer() {
               <h4 className="pb-2 text-sm">Tip Amount</h4>
               <p className="opacity-60 text-xs">/ person</p>
             </div>
-            <h2 className="font-bold text-greenc-200 text-4xl">
+            <h2 className="font-bold text-greenc-200 text-3xl md:text-4xl">
               {`$${tipAmount === 0 ? tipAmount + ".00" : tipAmount}`}
             </h2>
           </div>
@@ -82,7 +82,7 @@ function CardContainer() {
               <h4 className="pb-2 text-sm">Total</h4>
               <p className="opacity-60 text-xs">/ person</p>
             </div>
-            <h2 className="font-bold text-greenc-200 text-4xl">
+            <h2 className="font-bold text-greenc-200 text-3xl md:text-4xl">
               {`$${total === 0 ? total + ".00" : total}`}
             </h2>
           </div>
